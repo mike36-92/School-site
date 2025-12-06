@@ -183,6 +183,14 @@ header {
   line-height: 1.5;
 }
 
+.about-history ul {
+   font-weight: normal;
+  font-size: normal;
+  font-style: italic;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+}
+
 .about-history h2 {
   text-align: center;
   margin-bottom: 1rem;
@@ -223,6 +231,14 @@ display: inline;
 .about-founders h2 {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.about-founders ul {
+  font-weight: normal;
+  font-size: normal;
+  font-style: italic;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
 }
 
 .readMore {
@@ -402,4 +418,12 @@ background-color: #4347b9;
   color: #090909;
   font-size: 15px;
   font-family: 'Times New Roman', Times, serif;
+}
+
+.more-text {
+  display: none;
+}
+
+.show-more .more-text {
+  display: inline;
 }

@@ -34,3 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.querySelectorAll(".readMore").forEach(function(button) {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    let card = button.previousElementSibling;
+    card.classList.toggle("show-more");
+
+    if (card.classList.contains("show-more")) {
+      button.textContent = "Read Less";
+    } else {
+      button.textContent = "Read More";
+    }
+  });
+});
