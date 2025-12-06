@@ -1,0 +1,405 @@
+body {
+  font-family: 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif; 
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  background-color: #bfc0f3;
+}
+
+header {
+  background-color: #e9e9f4db;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(11px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.school-name {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  margin-left: 40px;
+  gap: 5px;
+}
+
+.nav-links li { 
+    flex-grow: 1;
+    text-align: center;
+ }
+
+.nav-links a {
+  color: #090909;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgb(87, 91, 223);
+}
+
+/* HERO SLIDER */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: heroFade 15s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 4s; }
+.hero-slide:nth-child(3) { animation-delay: 8s; }
+
+@keyframes heroFade {
+  0% { opacity: 0; }
+  2% { opacity: 1; }
+  35% { opacity: 1; }
+  65% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+  z-index: 1;
+  border-radius: 0 0 15px 15px;
+  
+}
+
+.bg1 { background-image: url('https://turntable.kagiso.io/images/Kids_in_class.width-800.jpg'); }
+.bg2 { background-image: url('https://mommyevolution.com/wp-content/uploads/2018/02/children-working-on-classroom-lesson-with-teacher-girl.jpg'); }
+.bg3 { background-image: url('https://www.readabilitytutor.com/wp-content/uploads/2025/01/Interview-with-Tom-Lewis-Glendale-Unified-School-District.jpg'); }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background-color: #7377ea;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4347b9;
+}
+
+.welcome {
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.welcome p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about-history {
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.about-history p {
+  font-weight: normal;
+  font-size: normal;
+  font-style: italic;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+}
+
+.about-history h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.founder-card img {
+  width: 40%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+display: inline;
+}
+
+.founder-images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.founder-info p {
+  font-weight: normal;
+  font-size: normal;
+  font-style: italic;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+}
+
+.about-founders h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.readMore {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #7377ea;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.readMore:hover {
+  background-color: #4347b9;
+}
+
+.readMore :visited {
+  background-color: #060a70;
+}
+
+
+.gallery-preview {
+text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  max-height: 370px;
+  transition: max-height 0.4s;
+}
+
+@media (max-width: 800px) {
+.gallery-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+.gallery-item img {
+width: 250px;
+height: 180px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+#view-more {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+display: inline-block;
+margin-top: 1rem;
+background-color: #7377ea;
+color: white;
+padding: 10px 25px;
+border-radius: 20px;
+text-decoration: none;
+transition: background-color 0.3s;
+font-size: 18px;
+}
+
+#view-more:hover {
+background-color: #4347b9;
+}
+
+.school-gallery {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.school-gallery .gallery-heading {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.school-gallery .gallery-subtext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.school-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-items: center;
+}
+
+@media (max-width: 800px) {
+  .school-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.school-gallery .gallery-item img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.school-gallery .gallery-item img:hover {
+  transform: scale(1.35);
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Lightbox image */
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Close button */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.poem {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.poem h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.poem p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #b0b0c0db;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  color: #090909;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
