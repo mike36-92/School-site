@@ -424,6 +424,6 @@ background-color: #4347b9;
   display: none;
 }
 
-.show-more .more-text {
-  display: inline;
+.toggle-content.show-more .more-text {
+  display: block;
 }
