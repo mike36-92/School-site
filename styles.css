@@ -427,3 +427,116 @@ background-color: #4347b9;
 .toggle-content.show-more .more-text {
   display: block;
 }
+
+/* Admission Form Styles */
+.admission-form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.form-header {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-botton: 10px;
+}
+
+.form-logo {
+  width: 80px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+  padding-left: 15px;
+   padding-right: 15px;
+}
+
+.admission-form-container h1 {
+  text-align: center;
+  color: #090909;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.admission-form-container p {
+  text-align: center;
+  font-size: 1rem;
+  color:#090909;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Ensure content is readable over background */
+}
+
+legend {
+  font-weight: bold;
+  color: #7377ea;
+  padding: 0 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #090909;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;          /* Use Flexbox to keep buttons in a row */
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px;              /* Add space between buttons */
+  flex-wrap: wrap;        /* Allow wrapping on very small screens if needed */
+}
+
+/* Existing button styles remain */
+.btn-secondary {
+  background-color: #7377ea;
+  color: white;
+  margin-left: 10px; /* Can be removed since gap handles spacing */
+}
+
+.btn-secondary:hover {
+  background-color: #4347b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admission-form-container {
+    margin: 20px;
+    padding: 15px;
+    background-size: 150px 150px; /* Smaller logo on mobile */
+  }
+  
+  fieldset {
+    padding: 10px;
+  }
+}

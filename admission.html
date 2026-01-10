@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission - Shine Mission School</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header and Navigation (Reused from main page) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src=".//imgs/school's logo.jpg" alt="School Logo">
+        <p class="school-name">Shine Mission School</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">HOME</a></li> 
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="academics.html">ACADEMICS</a></li>
+        <li><a href="admission.html">ADMISSION</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content: Admission Form -->
+  <main>
+
+    <section class="admission-form-container">
+      <div id="form-content">
+      <div class="form-header">
+        <img src=".//imgs/school's logo.jpg" alt="School Logo" class="form-logo">
+       <h1>Admission Application Form</h1>
+       <img src=".//imgs/school's logo.jpg" alt="School Logo" class="form-logo 1">
+       </div>
+      <p>Please fill out this form to apply for admission to Shine Mission School. All fields marked with * are required.</p>      
+      
+      <form id="admission-form" action="#" method="post"> <!-- Replace # with your backend URL -->
+        
+        <!-- Student Details -->
+        <fieldset>
+          <legend>Student Details</legend>
+          <label for="student-name">Full Name *</label>
+          <input type="text" id="student-name" name="student-name" required>
+          
+          <label for="dob">Date of Birth *</label>
+          <input type="date" id="dob" name="dob" required>
+          
+          <label for="gender">Gender *</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          
+          <label for="nationality">Nationality</label>
+          <input type="text" id="nationality" name="nationality">
+          
+          <label for="address">Home Address *</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+        </fieldset>
+        
+        <!-- Parent/Guardian Details -->
+        <fieldset>
+          <legend>Parent/Guardian Details</legend>
+          <label for="parent-name">Full Name *</label>
+          <input type="text" id="parent-name" name="parent-name" required>
+          
+          <label for="parent-relationship">Relationship to Student *</label>
+          <select id="parent-relationship" name="parent-relationship" required>
+            <option value="">Select</option>
+            <option value="father">Father</option>
+            <option value="mother">Mother</option>
+            <option value="guardian">Guardian</option>
+          </select>
+          
+          <label for="parent-phone">Phone Number *</label>
+          <input type="tel" id="parent-phone" name="parent-phone" required>
+          
+          <label for="parent-email">Email Address *</label>
+          <input type="email" id="parent-email" name="parent-email" required>
+          
+          <label for="parent-occupation">Occupation</label>
+          <input type="text" id="parent-occupation" name="parent-occupation">
+        </fieldset>
+        
+        <!-- Academic Information -->
+        <fieldset>
+          <legend>Academic Information</legend>
+          <label for="previous-school">Previous School</label>
+          <input type="text" id="previous-school" name="previous-school">
+          
+          <label for="grade-applying">Grade Applying For *</label>
+          <select id="grade-applying" name="grade-applying" required>
+            <option value="">Select</option>
+            <option value="kindergarten">Kindergarten</option>
+            <option value="grade-1">Creche</option>
+            <option value="grade-2">Nursery 1</option>
+            <option value="grade-3">Nursery 2</option>
+            <option value="grade-4">Kindergarten 1</option>
+            <option value="grade-5">Kindergarten 2/option>
+            <option value="grade-6">Class 1</option>
+            <option value="grade-7">Class 2</option>
+            <option value="grade-8">Class 3</option>
+            <option value="grade-9">Class 4</option>
+            <option value="grade-10">Class 5</option>
+            <option value="grade-11">Class 6</option>
+            <option value="grade-12">Jhs 1</option>
+            <option value="grade-13">Jhs 2</option>
+            <option value="grade-14">Jhs 3</option>
+          </select>
+          
+          <label for="special-needs">Any Special Needs or Medical Conditions?</label>
+          <textarea id="special-needs" name="special-needs" rows="2"></textarea>
+        </fieldset>
+        
+        <!-- Emergency Contact -->
+        <fieldset>
+          <legend>Emergency Contact</legend>
+          <label for="emergency-name">Full Name *</label>
+          <input type="text" id="emergency-name" name="emergency-name" required>
+          
+          <label for="emergency-relationship">Relationship to Student *</label>
+          <input type="text" id="emergency-relationship" name="emergency-relationship" required>
+          
+          <label for="emergency-phone">Phone Number *</label>
+          <input type="tel" id="emergency-phone" name="emergency-phone" required>
+        </fieldset>
+        
+        <!-- Declaration -->
+        <fieldset>
+          <legend>Declaration</legend>
+          <label>
+            <input type="checkbox" id="declaration" name="declaration" required>
+            I declare that the information provided is true and accurate. I agree to abide by the school's policies and terms.
+          </label>
+        </fieldset>
+      </div>
+        
+        <!-- Submit,downlaod and Reset -->
+        <div class="form-actions">
+          <button type="submit" class="btn">Submit Application</button>
+          <button type="reset" class="btn btn-secondary">Reset Form</button>
+          <button type="button" id="download-btn" class="btn btn-secondary">Download Form Data</button> 
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer (Reused from main page) -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Shine Mission School</p>
+      <p>Kasoa, Ghana</p>
+      <p>Contact: +233 12 123 1234 | Email: info@shinemissionschool.com</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
