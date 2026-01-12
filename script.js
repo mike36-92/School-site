@@ -82,48 +82,103 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
- // Download Form Data Functionality (Updated to download PNG image without buttons, with validation)
-document.getElementById('download-btn').addEventListener('click', function() {
-  const form = document.getElementById('admission-form');
-  const requiredFields = form.querySelectorAll('[required]');
-  let isValid = true;
-  let missingFields = [];
+  // Download Form Data Functionality (Updated to download PNG image without buttons, with validation)
+  const downloadBtn = document.getElementById('download-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function() {
+      const form = document.getElementById('admission-form');
+      const requiredFields = form.querySelectorAll('[required]');
+      let isValid = true;
+      let missingFields = [];
 
-  // Validate required fields
-  requiredFields.forEach(field => {
-    if (!field.value.trim()) {
-      isValid = false;
-      missingFields.push(field.name || field.id); // Collect names for feedback
-      field.style.borderColor = 'red'; // Highlight empty fields
-    } else {
-      field.style.borderColor = '#ccc'; // Reset border
-    }
-  });
+      // Validate required fields
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          missingFields.push(field.name || field.id); // Collect names for feedback
+          field.style.borderColor = 'red'; // Highlight empty fields
+        } else {
+          field.style.borderColor = '#ccc'; // Reset border
+        }
+      });
 
-  if (!isValid) {
-    alert(`Please fill in all required fields before downloading.`);
-    return; // Stop download
+      if (!isValid) {
+        alert('Please fill in all required fields before downloading.');
+        return; // Stop download
+      }
+
+      // If valid, capture the form content (excluding buttons)
+      const formContent = document.getElementById('form-content');
+      html2canvas(formContent).then(canvas => {
+        canvas.toBlob(blob => {
+          const url = URL.createObjectURL(blob);
+          
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'Shine_Mission_School_Admission_Form.png';
+          document.body.appendChild(a);
+          a.click();
+          
+          // Clean up
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 'image/png');
+      }).catch(error => {
+        console.error('Error generating image:', error);
+        alert('Failed to generate image. Please try again.');
+      });
+    });
   }
 
-  // If valid, capture the form content (excluding buttons)
-  const formContent = document.getElementById('form-content');
-  html2canvas(formContent).then(canvas => {
-    canvas.toBlob(blob => {
-      const url = URL.createObjectURL(blob);
-      
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Shine_Mission_School_Admission_Form.png';
-      document.body.appendChild(a);
-      a.click();
-      
-      // Clean up
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }, 'image/png');
-  }).catch(error => {
-    console.error('Error generating image:', error);
-    alert('Failed to generate image. Please try again.');
-  });
+  // Hero Slider Control with JavaScript (Controls background images via opacity)
+  const slides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+  const slideDuration = 5000; // 5 seconds per slide
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? '1' : '0';
+      slide.style.pointerEvents = i === index ? 'auto' : 'none'; // Enable clicks only on active slide
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  // Start the slider
+  showSlide(currentSlide);
+  setInterval(nextSlide, slideDuration);
 });
-});
+
+// Gallery Animation on Scroll (Triggers Every Time Section Enters View)
+const gallerySection = document.querySelector('.gallery-preview');
+if (gallerySection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add class to trigger animation when entering view
+        gallerySection.classList.add('animate-gallery');
+      } else {
+        // Remove class to reset animation when leaving view
+        gallerySection.classList.remove('animate-gallery');
+      }
+    });
+  }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+  observer.observe(gallerySection);
+
+  // On page load (including refresh), check if the section is in view and trigger animation if so
+  const addAnimationIfInView = () => {
+    const rect = gallerySection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      gallerySection.classList.add('animate-gallery');
+    } else {
+      gallerySection.classList.remove('animate-gallery');
+    }
+  };
+
+  window.addEventListener('load', addAnimationIfInView);
+}
