@@ -390,6 +390,13 @@ display: inline;
   transform: scale(1.35);
 }
 
+/* Disable animation ONLY on full gallery page */
+.school-gallery-grid .gallery-item {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
 /* Lightbox overlay */
 .lightbox {
   display: none; /* hidden by default */
