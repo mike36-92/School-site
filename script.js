@@ -182,3 +182,4 @@ if (gallerySection) {
 
   window.addEventListener('load', addAnimationIfInView);
 }
+
